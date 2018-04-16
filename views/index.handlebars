@@ -1,0 +1,36 @@
+<h1>Git The Fiddle!</h1>
+
+<h2>Guitars that have not been strummed!</h2>
+
+<ul>
+  {{#each guitars}}
+    {{#unless strummed}}
+    <p>{{guitar_name}}</p>
+	<button class="change-strum" data-id="{{id}}" data-newstrum="{{strummed}}">Strum Me!
+		{{#if strum}}{{else}}{{/if}}
+	</button>
+      {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Guitars that have been strummed!</h2>
+
+<ul>
+  {{#each guitars}}
+    {{#if strummed}}
+    <p>{{guitar_name}}</p>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Guitar</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Guitar Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+
+  <button type="submit">Add Guitar</button>
+</form>
